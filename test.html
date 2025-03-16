@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Patrisialoo!</title>
+    <style>
+        /* General Styling */
+        body {
+            background: linear-gradient(to right, #ffcc00, #ff6600); /* Kuning → Oranye */
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            padding: 10px;
+            overflow: hidden;
+        }
+
+        /* Main Container */
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            backdrop-filter: blur(10px);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            color: #ffffff; /* Putih biar kontras dengan background */
+        }
+
+        p {
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
+
+        /* Buttons */
+        .button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 20px;
+            font-size: 1em;
+            font-weight: bold;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .button-oke {
+            background: #ff8800; /* Oranye cerah */
+        }
+
+        .button-oke:hover {
+            background: #ff7700;
+        }
+
+        .button-gajelas {
+            background: #d84315; /* Merah-oranye */
+        }
+
+        .button-gajelas:hover {
+            background: #bf360c;
+        }
+
+        .button-music {
+            background: #4CAF50; /* Hijau */
+        }
+
+        .button-music:hover {
+            background: #45a049;
+        }
+
+        /* Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(255, 165, 0, 0.6); /* Efek glow oranye */
+            max-width: 400px;
+            color: black;
+        }
+
+        .modal button {
+            margin-top: 10px;
+            padding: 8px 15px;
+            border: none;
+            background: #ff9900; /* Oranye */
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .modal button:hover {
+            background: #ff7700;
+        }
+
+        /* Fade-in Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8em; }
+            p { font-size: 1em; }
+            .container { padding: 20px; }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 1.6em; }
+            p { font-size: 0.9em; }
+            .container { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 Happy Birthday, Patricialoo! 🎂</h1>
+        <p>I hope today brings you as much happiness as you bring to those around you. May this year be filled with laughter, success, and everything you wish for.</p>
+        <p>Also, I think this is a good time to say… I have a little crush on you. Just thought you should know. 😆</p>
+        <p>And if I’ve been acting a bit weird these past few days—well, now you know why. Haha.</p>
+        <p>But hey, no pressure or anything! I’m just saying this with no hidden intentions or expectations. I just wanted to be honest and share my feelings.</p>
+        <p>Wishing you the best always! 🎈</p>
+
+        <!-- Buttons -->
+        <div>
+            <button class="button button-oke" onclick="showModal('Oke oke, Pat! Wishing you a wonderful year ahead filled with joy and success!')">OKE LAN</button>
+            <button class="button button-gajelas" onclick="showModal('I\'m sorry if this made you uncomfortable. I had no bad intentions, just wanted to express my feelings. Hope we’re still cool!')">GAJELAS LAN</button>
+            <button class="button button-music" onclick="playMusic()">🎶 Play Song</button>
+        </div>
+    </div>
+
+    <!-- Custom Modal -->
+    <div id="customModal" class="modal">
+        <div class="modal-content">
+            <h3>Izin masuk Maulana 10241043</h3>
+            <p id="modalText"></p>
+            <button onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <!-- Audio -->
+    <audio id="birthdaySong" src="songss.mp3"></audio>
+
+    <!-- JavaScript -->
+    <script>
+        function showModal(message) {
+            document.getElementById("modalText").innerText = message;
+            document.getElementById("customModal").style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById("customModal").style.display = "none";
+        }
+
+        function playMusic() {
+            let audio = document.getElementById("birthdaySong");
+            audio.play();
+        }
+    </script>
+</body>
+</html>
